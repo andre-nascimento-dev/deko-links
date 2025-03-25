@@ -30,7 +30,7 @@ O design do projeto segue a referência:
 
 - Exibir links para todas as minhas redes sociais em um só lugar.
 
-## :memo Licença MIT
+## Licença MIT
 
 Esse projeto está sob a licença MIT.
 
