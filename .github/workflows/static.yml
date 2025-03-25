@@ -3,9 +3,9 @@ name: Deploy GitHub Pages
 on:
   push:
     branches:
-      - main  # Ou a branch que você deseja usar para o deploy
+      - main  # Ou a branch que deseja usar para deploy
 
-  workflow_dispatch: # Permite rodar manualmente no GitHub Actions
+  workflow_dispatch:  # Permite rodar manualmente
 
 permissions:
   contents: read
@@ -23,19 +23,10 @@ jobs:
       - name: Configurar o GitHub Pages
         uses: actions/configure-pages@v3
 
-      - name: Instalar dependências
-        run: |
-          npm install  # Caso esteja usando um projeto com Node.js
-
-      - name: Construir o projeto (se necessário)
-        run: |
-          npm run build  # Ajuste conforme sua estrutura de build
-          cp -r dist/* .  # Move os arquivos para o diretório raiz
-
-      - name: Fazer deploy para GitHub Pages
+      - name: Fazer upload dos arquivos para o GitHub Pages
         uses: actions/upload-pages-artifact@v2
         with:
-          path: ./dist  # Ajuste para o diretório onde seus arquivos finais estão
+          path: ./  # Pega todos os arquivos do repositório
 
       - name: Publicar no GitHub Pages
         uses: actions/deploy-pages@v2
