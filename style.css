@@ -20,7 +20,7 @@
   --highlight-color: #ffffff20;
   --image-transform: scaleX(1);
   --switch-bg: white url("./assets/MoonStars.svg") no-repeat center;
-  --switch-align-icon: translateX(100%);
+  --switch-align-icon: translateX(0%);
 }
 
 :root.light {
@@ -39,7 +39,7 @@
   --highlight-color: #00000020;
   --image-transform: scaleX(-1);
   --switch-bg: white url("./assets/Sun.svg") no-repeat center;
-  --switch-align-icon: translateX(0%);
+  --switch-align-icon: translateX(100%);
 }
 
 body {
