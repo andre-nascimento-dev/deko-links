@@ -1,0 +1,175 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --text-color: #ffffff;
+  --background-gradient: linear-gradient(
+    to right top,
+    #0d132a,
+    #173955,
+    #1f637e,
+    #3391a2,
+    #5bc0be
+  );
+  --stroke-color: #ffffff50;
+  --surface-color: #ffffff10;
+  --surface-color-hover: #ffffff05;
+  --highlight-color: #ffffff20;
+  --image-transform: scaleX(1);
+  --switch-bg: white url("./assets/MoonStars.svg") no-repeat center;
+  --switch-align-icon: translateX(100%);
+}
+
+:root.light {
+  --text-color: #000000;
+  --background-gradient: linear-gradient(
+    to right top,
+    #ffffff,
+    #e4ebfa,
+    #bbdcf1,
+    #89cedf,
+    #5bc0be
+  );
+  --stroke-color: #00000050;
+  --surface-color: #00000010;
+  --surface-color-hover: #00000005;
+  --highlight-color: #00000020;
+  --image-transform: scaleX(-1);
+  --switch-bg: white url("./assets/Sun.svg") no-repeat center;
+  --switch-align-icon: translateX(0%);
+}
+
+body {
+  background-image: var(--background-gradient);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top center;
+  height: 100vh;
+  overflow: hidden;
+}
+
+body * {
+  font-family: "Inter", sans-serif;
+  color: var(--text-color);
+}
+
+main#CONTAINER {
+  margin: 0 auto;
+  width: 360px;
+  padding: 0 24px;
+}
+
+main#CONTAINER > div#PROFILE {
+  margin-top: 56px;
+  text-align: center;
+}
+
+main#CONTAINER > div#PROFILE > img {
+  width: 112px;
+  transform: var(--image-transform);
+}
+
+main#CONTAINER > div#PROFILE > p {
+  margin-top: 8px;
+  font-weight: 500;
+  line-height: 24px;
+  cursor: pointer;
+}
+
+main#CONTAINER > div#SWITCH {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+main#CONTAINER > div#SWITCH > span {
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 64px;
+  height: 24px;
+  background-color: var(--surface-color);
+  border-radius: 9999px;
+  border: 1px solid var(--stroke-color);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  transition: background 0.2s;
+}
+
+main#CONTAINER > div#SWITCH > span > button {
+  position: absolute;
+  transform: var(--switch-align-icon);
+  width: 32px;
+  height: 32px;
+  border-radius: 100%;
+  background-color: var(--surface-color);
+  background: var(--switch-bg);
+  border: 0;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+main#CONTAINER > ul#LINKS {
+  margin-top: 24px;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+}
+
+main#CONTAINER > ul#LINKS > li > a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  border: 1px solid var(--stroke-color);
+  background-color: var(--surface-color);
+  cursor: pointer;
+  width: 312px;
+  height: 56px;
+  font-weight: 500;
+  text-decoration: none;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  transition: background 0.2s;
+}
+main#CONTAINER > ul#LINKS > li > a:hover {
+  background-color: var(--surface-color-hover);
+  border: 1.5px solid var(--text-color);
+}
+
+main#CONTAINER > ul#SOCIAL_LINKS {
+  margin: 24px 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+}
+
+main#CONTAINER > ul#SOCIAL_LINKS > li > a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  font-size: 24px;
+  transition: background 0.2s;
+  border-radius: 100%;
+  padding: 16px;
+}
+main#CONTAINER > ul#SOCIAL_LINKS > li > a:hover {
+  background-color: var(--highlight-color);
+}
+
+footer {
+  margin: 24px;
+  text-align: center;
+  font-size: 14px;
+}
